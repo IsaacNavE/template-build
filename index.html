@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="BuildPro Construction - Your trusted partner for professional construction and remodeling services."
+    />
+    <meta
+      name="keywords"
+      content="construction, remodeling, building services, commercial construction, residential construction"
+    />
+    <meta name="author" content="BuildPro Construction" />
+    <title>BuildPro Construction</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#1A73E8",
+              secondary: "#FBBF24",
+              dark: "#111827",
+            },
+          },
+        },
+      };
+    </script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css">
+
+
+    <script type="module" src="./components.js"></script>
+  </head>
+  <body class="bg-gray-100 text-gray-900">
+    <!-- Components -->
+    <app-header
+      border-radius="rounded-xl"
+      margin-top="mt-0"
+      margin-bottom="mb-20"
+      navbar-width="w-full"
+      navbar-align="justify-between"
+      navbar-bg-color="bg-white"
+      navbar-text-color="text-black"
+      hover-line-color="border-b-4 border-blue-500"
+      shadow="shadow-xl"
+          >
+    </app-header>
+    <app-hero
+      bg-color="bg-blue-500"
+      text-color="text-white"
+      text-align="text-center"
+      border-radius="none"
+    ></app-hero>
+    
+    </app-hero>
+    
+    <app-projects></app-projects>
+    <app-video></app-video>
+    <app-about></app-about>
+
+    <app-contact></app-contact>
+    <app-footer></app-footer>
+
+    <app-socials-button></app-socials-button>
+    <script src="/assets/i18n.js"></script>
+    <script src="/assets/language.js"></script>
+    <script>
+      // Cargar el idioma al cargar la página
+      document.addEventListener("DOMContentLoaded", () => {
+        updateTexts(); // Actualizar los textos según el idioma predeterminado
+      });
+    </script>
+  </body>
+</html>
