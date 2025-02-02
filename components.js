@@ -8,3 +8,5 @@ import './components/projects.js';
 import './components/appsocialsbutton.js';
 import './components/about.js';
 import './components/video.js';
+import './components/videos-work.js';
+import './components/carrusel-works.js';

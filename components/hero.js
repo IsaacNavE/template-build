@@ -5,10 +5,10 @@ class AppHero extends HTMLElement {
 
   constructor() {
     super();
-    this.bgColor = 'bg-primary'; // Default background color
-    this.textColor = 'text-white'; // Default text color
-    this.textAlign = 'text-center'; // Default text alignment
-    this.borderRadius = 'rounded-lg'; // Default border radius
+    this.bgColor = 'bg-black'; // Fondo negro
+    this.textColor = 'text-white'; // Texto blanco
+    this.textAlign = 'text-center'; // Alineación centrada
+    this.borderRadius = 'rounded-lg'; // Radio de borde por defecto
   }
 
   connectedCallback() {
@@ -17,18 +17,18 @@ class AppHero extends HTMLElement {
         @keyframes neonGlow {
           0% {
             box-shadow: 0 0 10px rgba(255, 255, 255, 0.3),
-                        0 0 30px rgba(0, 255, 255, 0.4),
-                        0 0 50px rgba(0, 255, 255, 0.6);
+                        0 0 30px rgba(255, 0, 0, 0.4),
+                        0 0 50px rgba(255, 0, 0, 0.6);
           }
           50% {
             box-shadow: 0 0 15px rgba(255, 255, 255, 0.4),
-                        0 0 45px rgba(0, 255, 255, 0.5),
-                        0 0 80px rgba(0, 255, 255, 0.8);
+                        0 0 45px rgba(255, 0, 0, 0.5),
+                        0 0 80px rgba(255, 0, 0, 0.8);
           }
           100% {
             box-shadow: 0 0 10px rgba(255, 255, 255, 0.3),
-                        0 0 30px rgba(0, 255, 255, 0.4),
-                        0 0 50px rgba(0, 255, 255, 0.6);
+                        0 0 30px rgba(255, 0, 0, 0.4),
+                        0 0 50px rgba(255, 0, 0, 0.6);
           }
         }
 
@@ -47,7 +47,6 @@ class AppHero extends HTMLElement {
         .hero-bg {
           position: relative;
           overflow: hidden;
-          background: radial-gradient(circle, rgba(0, 0, 50, 1) 0%, rgba(0, 0, 25, 1) 100%);
         }
 
         .neon-light {
@@ -55,7 +54,7 @@ class AppHero extends HTMLElement {
           border-radius: 50%;
           width: 300px;
           height: 300px;
-          background: rgba(0, 255, 255, 0.3);
+          background: rgba(255, 0, 0, 0.3); /* Rojo */
           animation: neonGlow 3s infinite ease-in-out, floatingNeon 6s infinite ease-in-out;
           mix-blend-mode: screen;
         }
@@ -63,41 +62,56 @@ class AppHero extends HTMLElement {
         .neon-light:nth-child(1) {
           top: 20%;
           left: 30%;
-          background: rgba(255, 0, 150, 0.3);
+          background: rgba(255, 0, 0, 0.3); /* Rojo */
           animation-delay: 0s;
         }
 
         .neon-light:nth-child(2) {
           top: 50%;
           left: 70%;
-          background: rgba(0, 255, 200, 0.3);
+          background: rgba(255, 0, 0, 0.3); /* Rojo */
           animation-delay: 1s;
         }
 
         .neon-light:nth-child(3) {
           top: 80%;
           left: 20%;
-          background: rgba(0, 150, 255, 0.3);
+          background: rgba(255, 0, 0, 0.3); /* Rojo */
           animation-delay: 2s;
         }
 
         .hero-content {
           position: relative;
           z-index: 1;
-          text-align: center;
-          color: white;
+          text-align: center; /* Alineación centrada */
           animation: fadeIn 2s ease-in-out;
         }
 
-        @keyframes fadeIn {
-          0% {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          100% {
-            opacity: 1;
-            transform: translateY(0);
-          }
+        .hero-content h1 {
+          margin-top: 2rem; /* Espaciado superior */
+          font-size: 2.25rem; /* Tamaño de fuente para h1 */
+          font-weight: bold;
+          margin-bottom: 1.5rem; /* Espaciado inferior */
+        }
+
+        .hero-content p {
+          font-size: 1.125rem; /* Tamaño de fuente para párrafos */
+          margin-bottom: 1.5rem; /* Espaciado inferior */
+          color: #f4f4f4; /* Texto blanco */
+        }
+
+        .hero-content a {
+          background-color: red; /* Rojo para el botón */
+          color: white; /* Texto blanco */
+          font-weight: bold;
+          padding: 15px 30px;
+          border-radius: 9999px;
+          text-decoration: none;
+          transition: background-color 0.3s ease;
+        }
+
+        .hero-content a:hover {
+          background-color: darkred; /* Rojo oscuro al pasar el ratón */
         }
 
         .hero-bg::after {
@@ -114,19 +128,32 @@ class AppHero extends HTMLElement {
         .hero-bg {
           transition: background-color 1s ease-in-out;
         }
+
+        /* Clases para el fondo, texto y bordes personalizados */
+        .bg-black {
+          background-color: black;
+        }
+
+        .text-white {
+          color: white;
+        }
+
+        .rounded-lg {
+          border-radius: 0.5rem;
+        }
       </style>
 
-      <section id="hero" class="${this.bgColor} ${this.textColor} ${this.borderRadius} hero-bg relative overflow-hidden mt-5">
+      <section id="hero" class="hero-bg ${this.bgColor} ${this.textColor} ${this.borderRadius} hero-container">
         <!-- Luces de neón dinámicas -->
         <div class="neon-light"></div>
         <div class="neon-light"></div>
         <div class="neon-light"></div>
 
         <!-- Contenido del Hero -->
-        <div class="container mx-auto ${this.textAlign} py-20 px-6 hero-content">
-          <h1 class="text-4xl md:text-6xl font-bold mb-6" data-translate="heroText">Build Your Future with BuildPro</h1>
-          <p class="text-lg md:text-xl mb-6" data-translate="heroDescription">Professional construction services tailored to your needs.</p>
-          <a href="#contact" class="bg-secondary text-dark font-bold py-3 px-6 rounded-full shadow-lg hover:bg-yellow-500" data-translate="getQuoteButton">
+        <div class="hero-content">
+          <h1 class="hero-title" data-translate="heroText">Build Your Future with ARCE LIBERTY LLC</h1>
+          <p class="hero-description" data-translate="heroDescription">Professional construction services tailored to your needs.</p>
+          <a href="#contact" class="hero-button" data-translate="getQuoteButton">
             Get a Quote
           </a>
         </div>
