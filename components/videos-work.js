@@ -3,9 +3,9 @@ class VideosWork extends HTMLElement {
     super();
     this.currentVideoIndex = 0;
     this.videos = [
-      "./assets/video/video1.mp4",
-      "./assets/video/video2.mp4",
-      "./assets/video/video3.mp4",
+      "./assets/video/video11.mp4",
+      "./assets/video/video22.mp4",
+      "./assets/video/video33.mp4",
     ];
     this.isModalOpen = false;
     this.startX = 0;
