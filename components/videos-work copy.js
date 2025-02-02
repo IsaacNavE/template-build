@@ -70,7 +70,7 @@ class VideosWork extends HTMLElement {
             <!-- Video 1 -->
             <div class="video-item">
               <video autoplay muted loop>
-                <source src="./assets/video/video1.mp4" type="video/mp4">
+                <source src="./assets/video/video11.mp4" type="video/mp4">
                 Tu navegador no soporta el formato de video.
               </video>
               
@@ -79,7 +79,7 @@ class VideosWork extends HTMLElement {
             <!-- Video 2 -->
             <div class="video-item">
               <video autoplay muted loop>
-                <source src="./assets/video/video2.mp4" type="video/mp4">
+                <source src="./assets/video/video22.mp4" type="video/mp4">
                 Tu navegador no soporta el formato de video.
               </video>
              
@@ -88,7 +88,7 @@ class VideosWork extends HTMLElement {
             <!-- Video 3 -->
             <div class="video-item">
               <video autoplay muted loop>
-                <source src="./assets/video/video3.mp4" type="video/mp4">
+                <source src="./assets/video/video33.mp4" type="video/mp4">
                 Tu navegador no soporta el formato de video.
               </video>
               
